@@ -4,6 +4,6 @@ details for their story, as well as how they interact with one another, and allo
 swap between information based on what is clicked.
 
 TO-DO: 
-[ ] Create foundation for Characters
+[X, ] Create foundation for Characters (Multiple steps. Should iron this out a bit more)
 [ ] Create a webpage that will display Character information
 [ ] Load character page with correct information based on argument passed

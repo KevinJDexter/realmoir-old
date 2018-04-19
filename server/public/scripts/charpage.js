@@ -1,3 +1,7 @@
+$.getScript('characters.js', function() {
+  console.log('loaded in characters.js');
+});
+
 $(document).ready(onReady);
 
 function onReady () {
@@ -12,5 +16,6 @@ function onReady () {
 
     $('body').append(newListElement);
   }
-  console.log(characterList);
+  // console.log(characterList);
 }
+
