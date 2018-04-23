@@ -13,6 +13,7 @@ function onReady() {
   // postCharacterInfo(Falor);
   $('#objectType').on('change', dropDownSelected);
   $('.submitButton').on('click', submitForm);
+  $('#charDiv').on('click', 'h3', toggleInfo);
   getCharacterInfo();
 }
 
@@ -44,10 +45,12 @@ function getCharacterInfo() {
           character.age += ' (deceased)';
         }
         $('#charDiv').append(
-          `<h3>${character.name}</h3>
+          `<div><h3>${character.name}</h3>
+          <div class="charInfo" style="display: none">
           <p><strong>Lived:</strong> ${character.birth} - ${character.death}</p>
           <p><strong>Age:</strong> ${character.age}</p>
-          <p><strong>Home:</strong> ${character.home}</p>`)
+          <p><strong>Home:</strong> ${character.home}</p>
+          </div></div>`)
       });
     })
 }
@@ -69,5 +72,14 @@ function dropDownSelected() {
   $('.inputForm').attr('style', 'display: none');
   if (objectSelected == 'character') {
     $('#charInputs').attr('style', 'display: block');
+  }
+}
+
+function toggleInfo() {
+  el = $(this).siblings();
+  let isShowing = (el.attr('style') == 'display: block')
+  $('.charInfo').attr('style', 'display: none');
+  if (!isShowing) {
+    $(this).siblings().attr('style', 'display: block');
   }
 }
