@@ -3,16 +3,17 @@
 $(document).ready(onReady);
 
 function onReady() {
-  let Falor = {
-    name: 'Falor Fleetwind',
-    birth: '198 Argas',
-    death: '220 Argas',
-    age: '22 (deceased)',
-    home: 'Fleetwind Manor'
-  };
-  postCharacterInfo(Falor);
+  // let Falor = {
+  //   name: 'Falor Fleetwind',
+  //   birth: '198 Argas',
+  //   death: '',
+  //   age: '22 (deceased)',
+  //   home: 'Fleetwind Manor'
+  // };
+  // postCharacterInfo(Falor);
   $('#objectType').on('change', dropDownSelected);
   $('.submitButton').on('click', submitForm);
+  getCharacterInfo();
 }
 
 function submitForm () {
@@ -36,6 +37,18 @@ function getCharacterInfo() {
   })
     .then(function (response) {
       console.log(response);
+      response.forEach(character => {
+        if (character.death == '') {
+          character.death = 'Living';
+        } else {
+          character.age += ' (deceased)';
+        }
+        $('#charDiv').append(
+          `<h3>${character.name}</h3>
+          <p><strong>Lived:</strong> ${character.birth} - ${character.death}</p>
+          <p><strong>Age:</strong> ${character.age}</p>
+          <p><strong>Home:</strong> ${character.home}</p>`)
+      });
     })
 }
 

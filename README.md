@@ -11,5 +11,5 @@ TO-DO:
 [X] Input fields to create new Character
 [X] Submit button that uses inputs to create new character
 [X] Submit button uses Ajax call
-[ ] Display Characters in DOM
+[X] Display Characters in DOM
 [ ] Characters name only displayed. Click on name displays the rest of the details
