@@ -4,6 +4,12 @@ details for their story, as well as how they interact with one another, and allo
 swap between information based on what is clicked.
 
 TO-DO: 
-[X, ] Create foundation for Characters (Multiple steps. Should iron this out a bit more)
-[ ] Create a webpage that will display Character information
-[ ] Load character page with correct information based on argument passed
+[ ] GET requests for the Character library SERVER-SIDE
+[ ] POST requests to add Characters SERVER-SIDE
+[ ] Ajax call to get Character library CLIENT-SIDE
+[ ] Ajax call to post Character CLIENT-SIDE
+[ ] Input fields to create new Character
+[ ] Submit button that uses inputs to create new character
+[ ] Submit button uses Ajax call
+[ ] Display Characters in DOM
+[ ] Characters name only displayed. Click on name displays the rest of the details
