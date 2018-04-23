@@ -5,7 +5,8 @@ const PORT = 8000;
 const app = express();
 
 const Character = require('./modules/characters');
-const characterList = [];
+const Library = require('./modules/library');
+const myLibrary = new Library();
 
 
 app.use(express.static('server/public'));
@@ -16,13 +17,13 @@ app.listen(PORT, function() {
 })
 
 app.get('/characters', (req, res) => {
-  res.send(characterList);
+  res.send(myLibrary.characters);
 })
 
 app.post('/post_char', (req, res) => {
   console.log(req.body);
   let charInfo = req.body;
   let newChar = new Character (charInfo.name, charInfo.birth, charInfo.death, charInfo.age, charInfo.home);
-  characterList.push(newChar);
+  myLibrary.saveElement(newChar);
   res.sendStatus(200);
 })
