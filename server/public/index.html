@@ -11,6 +11,21 @@
 </head>
 <body>
   <h1>Realmoir</h1>
-  <li><a href="charpage.html">TEST LINK</a></li>
+  <!-- <li><a href="charpage.html">TEST LINK</a></li> -->
+  <div>
+    <select name="objectType" id="objectType">
+      <option value="blank"></option>
+      <option value="character">Character</option>
+      <option value="location">Location</option>
+      <option value="event">Event</option>
+    </select>
+    <div id="charInputs" class="inputForm" style="display: none">
+      <input id="nameIn" type="text" placeHolder="Name">
+      <input id="birthIn" type="text" placeHolder="Birth">
+      <input id="deathIn" type="text" placeHolder="Death">
+      <input id="ageIn" type="text" placeHolder="Age">
+      <input id="homeIn" type="text" placeHolder="Home">
+    </div>
+  </div>
 </body>
 </html>

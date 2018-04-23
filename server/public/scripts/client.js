@@ -1,10 +1,4 @@
-// const character = require('../modules/characters');
-// $.getScript('../characters.js', function () {
-//   console.log()
-// })
 
-const locations = [];
-const events = [];
 
 $(document).ready(onReady);
 
@@ -16,17 +10,9 @@ function onReady() {
     age: '22 (deceased)',
     home: 'Fleetwind Manor'
   };
-  $.ajax({
-    type: 'POST',
-    data: Falor,
-    url: '/post_char'
-  }).then((response) => {
-    console.log(response);
-    getCharacterInfo();
-  });
+  postCharacterInfo(Falor);
+  $('#objectType').on('change', charSelected);
 }
-
-const characterList = [];
 
 function getCharacterInfo() {
   $.ajax({
@@ -36,4 +22,24 @@ function getCharacterInfo() {
     .then(function (response) {
       console.log(response);
     })
+}
+
+function postCharacterInfo(charToPost) {
+  $.ajax({
+    type: 'POST',
+    data: charToPost,
+    url: '/post_char'
+  }).then((response) => {
+    console.log(response);
+    getCharacterInfo();
+  });
+}
+
+function charSelected() {
+  let objectSelected = $(this).val();
+  console.log(objectSelected);
+  $('.inputForm').attr('style', 'display: none');
+  if (objectSelected == 'character') {
+    $('#charInputs').attr('style', 'display: block');
+  }
 }

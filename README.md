@@ -4,11 +4,11 @@ details for their story, as well as how they interact with one another, and allo
 swap between information based on what is clicked.
 
 TO-DO: 
-[ ] GET requests for the Character library SERVER-SIDE
-[ ] POST requests to add Characters SERVER-SIDE
-[ ] Ajax call to get Character library CLIENT-SIDE
+[X] GET requests for the Character library SERVER-SIDE
+[X] POST requests to add Characters SERVER-SIDE
+[X] Ajax call to get Character library CLIENT-SIDE
 [ ] Ajax call to post Character CLIENT-SIDE
-[ ] Input fields to create new Character
+[X] Input fields to create new Character
 [ ] Submit button that uses inputs to create new character
 [ ] Submit button uses Ajax call
 [ ] Display Characters in DOM

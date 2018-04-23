@@ -2,18 +2,18 @@ const Character = require('./characters');
 
 class Library {
   constructor () {
-    characters: []
-    locations: []
-    events: []
+    this.characters = []
+    this.locations = []
+    this.events = []
   }
 
   saveElement(element) {
     if (element instanceof Character) {
-      characters.push(element);
+      this.characters.push(element);
     // } else if (element instanceof Location) {
-    //   locations.push(element);
+    //   this.locations.push(element);
     // } else if (element instanceof Event) {
-    //   events.push(element);
+    //   this.events.push(element);
     }
     
   };
