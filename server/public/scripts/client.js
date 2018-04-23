@@ -11,7 +11,22 @@ function onReady() {
     home: 'Fleetwind Manor'
   };
   postCharacterInfo(Falor);
-  $('#objectType').on('change', charSelected);
+  $('#objectType').on('change', dropDownSelected);
+  $('.submitButton').on('click', submitForm);
+}
+
+function submitForm () {
+  if ($('#objectType').val() == 'character') {
+    let newChar = {
+      name: $('#nameIn').val(),
+      birth: $('#birthIn').val(),
+      death: $('#deathIn').val(),
+      age: $('#ageIn').val(),
+      home: $('#homeIn').val()
+    };
+    console.log("KABLAMO")
+    postCharacterInfo(newChar);
+  }
 }
 
 function getCharacterInfo() {
@@ -26,7 +41,7 @@ function getCharacterInfo() {
 
 function postCharacterInfo(charToPost) {
   $.ajax({
-    type: 'POST',
+    method: 'POST',
     data: charToPost,
     url: '/post_char'
   }).then((response) => {
@@ -35,7 +50,7 @@ function postCharacterInfo(charToPost) {
   });
 }
 
-function charSelected() {
+function dropDownSelected() {
   let objectSelected = $(this).val();
   console.log(objectSelected);
   $('.inputForm').attr('style', 'display: none');

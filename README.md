@@ -7,9 +7,9 @@ TO-DO:
 [X] GET requests for the Character library SERVER-SIDE
 [X] POST requests to add Characters SERVER-SIDE
 [X] Ajax call to get Character library CLIENT-SIDE
-[ ] Ajax call to post Character CLIENT-SIDE
+[X] Ajax call to post Character CLIENT-SIDE
 [X] Input fields to create new Character
-[ ] Submit button that uses inputs to create new character
-[ ] Submit button uses Ajax call
+[X] Submit button that uses inputs to create new character
+[X] Submit button uses Ajax call
 [ ] Display Characters in DOM
 [ ] Characters name only displayed. Click on name displays the rest of the details
